@@ -1,8 +1,9 @@
 import streamlit as st
 import requests
 
-def mostrar_carrusel():
-    ilustraciones = [
+def mostrar_carrusel(): 
+    # Lista de slides con imagen + tip + trivia
+    slides = [
         {
             "img": "assets/Laelia_majalis.png",
             "tip": "💧 Riega por la mañana para evitar hongos.",
@@ -10,23 +11,33 @@ def mostrar_carrusel():
         },
         {
             "img": "assets/Laelia_majalis.png",
-            "tip": "🌤️ Coloca tus plantas cerca de ventanas con luz filtrada.",
-            "trivia": "🌱 Las violetas africanas prefieren temperaturas estables."
+            "tip": "🌤️ Luz filtrada es ideal para la mayoría de las plantas de interior.",
+            "trivia": "🌿 Las violetas africanas florecen todo el año si están felices."
+        },
+        {
+            "img": "assets/Laelia_majalis.png",
+            "tip": "🌱 Evita cambios bruscos de temperatura cerca de tus plantas.",
+            "trivia": "🪴 El ficus benjamina puede perder hojas si se estresa por el ambiente."
         }
     ]
 
-    idx = st.session_state.get("carrusel_idx", 0)
-    ilustracion = ilustraciones[idx]
+    if "carrusel_idx" not in st.session_state:
+        st.session_state.carrusel_idx = 0
 
-    st.image(ilustracion["img"], use_container_width=True)
-    st.markdown(f"**Tip:** {ilustracion['tip']}")
-    st.markdown(f"**Trivia:** {ilustracion['trivia']}")
+    idx = st.session_state.carrusel_idx
+    slide = slides[idx]
+
+    st.image(slide["img"], use_container_width=True)
+    st.markdown(f"**Tip del día:** {slide['tip']}")
+    st.markdown(f"**Trivia botánica:** {slide['trivia']}")
 
     colA, colB = st.columns(2)
-    if colA.button("⬅️ Anterior", key="prev"):
-        st.session_state.carrusel_idx = (idx - 1) % len(ilustraciones)
-    if colB.button("➡️ Siguiente", key="next"):
-        st.session_state.carrusel_idx = (idx + 1) % len(ilustraciones)
+    with colA:
+        if st.button("⬅️", key="prev_slide"):
+            st.session_state.carrusel_idx = (idx - 1) % len(slides)
+    with colB:
+        if st.button("➡️", key="next_slide"):
+            st.session_state.carrusel_idx = (idx + 1) % len(slides)
 
 def cargar_historial(api_url):
     try:
