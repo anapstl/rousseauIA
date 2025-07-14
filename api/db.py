@@ -25,7 +25,7 @@ def guardar_interaccion(role, pregunta, respuesta, origen="streamlit"):
     cursor.close()
     conn.close()
 
-def obtener_historial(limit=25):
+def obtener_historial(limit=5):
     conn = get_connection()
     cursor = conn.cursor(cursor_factory=RealDictCursor)
     cursor.execute("""
