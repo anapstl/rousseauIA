@@ -20,6 +20,10 @@ st.markdown("""
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
+    #MainMenu {visibility: hidden;}
+    footer {visibility: hidden;}
+    header {visibility: hidden;}
+                        
 /* Fondo general */
 [data-testid="stAppViewContainer"] {
     background-image: url("https://upload.wikimedia.org/wikipedia/commons/2/2f/Martin_Johnson_Heade_-_Orchid_and_Hummingbird_near_a_Mountain_Waterfall.jpg");
@@ -102,7 +106,11 @@ button[title="Enter"]:hover {
 .eacrzsi2 {
     margin-left: auto;
     display: flex;}
-}            
+}
+
+.stAppHeader {
+    display: None !important;
+}          
 
 </style>
 """, unsafe_allow_html=True)
