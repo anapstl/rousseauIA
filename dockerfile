@@ -8,6 +8,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 RUN chmod +x start.sh
 
-EXPOSE 5000 8501
+EXPOSE 10000
 
 CMD ["./start.sh"]
