@@ -23,6 +23,11 @@ st.markdown("""
     #MainMenu {visibility: hidden;}
     footer {visibility: hidden;}
     header {visibility: hidden;}
+            
+body {
+    background-color: transparent;
+    color: white;
+}
                         
 /* Fondo general */
 [data-testid="stAppViewContainer"] {
