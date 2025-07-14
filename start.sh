@@ -1,14 +1,10 @@
 #!/bin/bash
 
-# Lanzar API Flask en segundo plano
-echo "Iniciando API Flask..."
-cd api
-python3 main.py &
+echo "🚀 Iniciando API Flask..."
+python3 api/main.py &
 
-# Espera para que la API se levante (opcional)
 sleep 2
 
-# Lanzar la app de Streamlit
-echo "Iniciando Streamlit..."
-cd ../streamlit_app
+echo "🌿 Iniciando Streamlit..."
+cd streamlitApp
 streamlit run app.py --server.port=8501 --server.enableCORS=false

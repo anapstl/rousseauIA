@@ -11,7 +11,7 @@ st.set_page_config(
     layout="wide"
 )
 
-API_URL = os.getenv("API_URL", "http://localhost:5000")
+API_URL = "http://127.0.0.1:5000"
 
 # background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Orchid_and_hummingbird_by_Martin_Johnson_Heade.jpg/1024px-Orchid_and_hummingbird_by_Martin_Johnson_Heade.jpg");
 # Fondo con CSS
@@ -94,7 +94,7 @@ button[title="Enter"]:hover {
     display: none !important;
 }
             
-.e1lln2w80:not(.st-emotion-cache-ocqkz7) {
+.stVerticalBlock:not(.stVerticalBlock .stVerticalBlock) {
     background: rgba(255, 255, 255, 0.12);
     padding: 1rem;
     border-radius: 16px;
