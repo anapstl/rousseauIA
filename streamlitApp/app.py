@@ -111,9 +111,6 @@ button[title="Enter"]:hover {
     display: flex;}
 }
 
-.stAppHeader {
-    display: None !important;
-}          
 
 </style>
 """, unsafe_allow_html=True)
